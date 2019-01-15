@@ -112,4 +112,6 @@ User Guides
         
 
   
-
+  //TODO Invalid URL Requests must be handled.
+  
+  //TODO Role Management must be handled via a seperate tables. (like role table and user_role table)
