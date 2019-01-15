@@ -62,7 +62,7 @@ User Guides
 
            II)  DELETE GROUP
            
-                 a. onlly groups with no members can be deleted.
+                 a. only groups with no members can be deleted.
 
            III) ADD USER TO A GROUP
 
