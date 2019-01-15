@@ -30,10 +30,10 @@ INSTALLATION
 ============
 1- Download and Extract the Source Code.
 
-2-Create DataBase:
+2- Create DataBase:
    - in the terminal of the IDE type:
    
-    . php bin/console doctrin:database:create
+      `php bin/console doctrin:database:create`
 
 3- Create Table:
     -in the terminal of the IDE type these commands to create tables for the entities of the project:
@@ -54,19 +54,35 @@ User Guides
       
       a. users have to register 
       
-      b. first user who is register will be considered as admin
+      b. THE FIRST USER WHO RWGISTERS WILL BE KNOWN AS ADMIN 
       
-      c. PLEASE NOTE THAT ONLY ADMIN USER CAN DO THE FOLLOWING ACTIONS:
+      c. PLEASE NOTE THAT ONLY ADMIN CAN DO THE FOLLOWING ACTIONS:
       
-        I)   CREATE GROUP 
+           I)   CREATE GROUP 
+
+           II)  DELETE GROUP
+
+           III) ADD USER TO A GROUP
+
+           IV)  REMOVE USER FROM A GROUP
+
+           V)   DELETE USER
         
-        II)  DELETE GROUP
+ **1-2 REST API part:**  
+      
+        a.  In the registration process a unique token is created for each user in order to identify the senders of the REST requests
         
-        III) ADD USER TO A GROUP
+            I)   token is stored in token column of the user table 
+            
+            II)  Each user can see only his/her own token in the user list of web version
+            
+            // TODO  separte table with the userId column, user token column, and also expiration time column must be implemented, etc.
         
-        IV)  REMOVE USER FROM A GROUP
+        b.  REST REQUESTS MUST START WITH /api/. Such as THE FOLLOWING SAMPLE URL:
         
-        V)   DELETE USER
+            `HOMEURL/api/request
+            
+         
         
 
   
