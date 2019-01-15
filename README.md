@@ -52,9 +52,9 @@ User Guides
 
 **1-1 Web part:**
       
-      a. users have to register 
+      a. users can register 
       
-      b. THE FIRST USER WHO RWGISTERS WILL BE KNOWN AS ADMIN. (column roles is implemented inside the user table)
+      b. THE FIRST USER WHO REGISTER WILL GIVEN ADMIN_ROLE. (column roles is implemented inside the user table)
       
       c. PLEASE NOTE THAT ONLY ADMIN CAN DO THE FOLLOWING ACTIONS:
       
@@ -79,6 +79,8 @@ User Guides
             II)  Each user can see only his/her own token in the user list of web version
             
             // TODO  separte table with the userId column, user token column, and also expiration time column must be implemented, etc.
+            
+            // TODO  After each Login Token must be created
         
         b.  REST REQUESTS MUST START WITH /api/. Such as the followign sample url:
         
