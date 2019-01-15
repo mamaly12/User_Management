@@ -24,7 +24,7 @@ REQUIREMENTS
 
 • MySQL 5.6 or higher. ( http://dev.mysql.com/downloads/ )
 
-• IDE (PhpStorm)
+• IDE (like PhpStorm). (https://www.jetbrains.com/phpstorm/download/)
 
 INSTALLATION
 ============
