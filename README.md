@@ -41,7 +41,7 @@ INSTALLATION
         a. php bin/console doctrine:migrations:diff
         
         b. php bin/console doctrine:migrations:migrate
-
+        
 User Guides
 ============
 1- The project consists of two parts: 
@@ -54,13 +54,15 @@ User Guides
       
       a. users have to register 
       
-      b. THE FIRST USER WHO RWGISTERS WILL BE KNOWN AS ADMIN 
+      b. THE FIRST USER WHO RWGISTERS WILL BE KNOWN AS ADMIN. (column roles is implemented inside the user table)
       
       c. PLEASE NOTE THAT ONLY ADMIN CAN DO THE FOLLOWING ACTIONS:
       
            I)   CREATE GROUP 
 
            II)  DELETE GROUP
+           
+                 a. onlly groups with no members can be deleted.
 
            III) ADD USER TO A GROUP
 
@@ -70,7 +72,7 @@ User Guides
         
  **1-2 REST API part:**  
       
-        a.  In the registration process a unique token is created for each user in order to identify the senders of the REST requests
+        a.  In the registration process a unique token is created for each user in order to identify the senders of the REST requests.
         
             I)   token is stored in token column of the user table 
             
@@ -78,11 +80,33 @@ User Guides
             
             // TODO  separte table with the userId column, user token column, and also expiration time column must be implemented, etc.
         
-        b.  REST REQUESTS MUST START WITH /api/. Such as THE FOLLOWING SAMPLE URL:
+        b.  REST REQUESTS MUST START WITH /api/. Such as the followign sample url:
         
-            `HOMEURL/api/request
+            `HOMEURL/api/RESTREQUEST`
             
-         
+        c.  admin token must be send as a token parameter for the REST requests. 
+        
+            `example: HOMEURL/api/deleteUser?token=sadff&userId=2`
+            
+        d.  the following shows the list of valid REST API Requests:
+        
+            I)    create user: `HOMEURL/api/createUser?token=****&name=***&email=****&password=****`
+            
+            II)   delete user:  `HOMEURL/api/deleteUser?token=****&userId=***`
+            
+            III)  view user list:  `HOMEURL/api/viewUsers?token=****`
+            
+            IV)   create group:  `HOMEURL/api/createGroup?token=****&title=`
+            
+            V)    delete group:  `HOMEURL/api/deleteGroup?token=****&groupId=`
+            
+            VI)   view group members:  `HOMEURL/api/viewGroupUsers?token=****&groupId=` 
+            
+            VII)  add user to a group: `HOMEURL/api/viewGroupUsers?token=****&groupId=` 
+            
+            VIII) view group list `HOMEURL/api/groupList?token=****` 
+            
+            IX)   delete a user from a group  `HOMEURL/api/deleteUserFromGroup?token=****&userId=***andGroupId=****` 
         
 
   
