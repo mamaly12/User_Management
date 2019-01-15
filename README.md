@@ -108,7 +108,7 @@ User Guides
             
             VIII) view group list `HOMEURL/api/groupList?token=****` 
             
-            IX)   delete a user from a group  `HOMEURL/api/deleteUserFromGroup?token=****&userId=***andGroupId=****` 
+            IX)   delete a user from a group  `HOMEURL/api/deleteUserFromGroup?token=****&userId=***&groupId=****` 
         
 
   
