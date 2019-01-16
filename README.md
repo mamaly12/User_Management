@@ -35,6 +35,10 @@ INSTALLATION
 
 		a. composer update
 		
+		b. according to env file of the root of the project DATABASE_URL=mysql://mohammad:mohammad@127.0.0.1:3306/usersmanegement
+		
+		create a user with password which has access to the database: DATABASE_URL=mysql://user_db:user_password@127.0.0.1:3306/dbName
+		
 		b. php bin/console doctrin:database:create
 
 3- Create Table:
