@@ -92,7 +92,7 @@ User Guides
         
             `HOMEURL/api/RESTREQUEST`
             
-        c.  admin token must be send as a token parameter for the REST requests. 
+        c.  admin token must be send as a token parameter for each REST request. 
         
             `example: HOMEURL/api/deleteUser?token=sadff&userId=2`
             
