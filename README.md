@@ -31,9 +31,11 @@ INSTALLATION
 1- Download and Extract the Source Code.
 
 2- Create DataBase:
-   - in the terminal of the IDE type:
-   
-      `php bin/console doctrin:database:create`
+   - in the terminal of the IDE type the following commands:
+
+		a. composer update
+		
+		b. php bin/console doctrin:database:create
 
 3- Create Table:
     -in the terminal of the IDE type these commands to create tables for the entities of the project:
