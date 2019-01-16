@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('static/core/css/bootstrap.min.css')}}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {{ include('inc/navbar.html.twig') }}
+        <div class="container">
+        {% block body %}{% endblock %}
+        </div>
+        <script src="{{ asset('static/core/js/jquery.min.js')}}"></script>
+        <script src="{{ asset('static/core/js/popper.min.js')}}" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="{{ asset('static/core/js/bootstrap.min.js')}}" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<nav class ="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+    <div class="container">
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
+            <span class="navbar-toggle-icon"></span>
+       </button>
+    </div>
+    <div class="collapse navbar-collapse" id="mobile-nav">
+        <ul class="navbar-nav m1-auto">
+            {%if app.user %}
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link">Logout</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a href="/register" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">login</a>
+                </li>
+            {% endif %}
+            <li class="nav-item">
+                <a href="/user/list" class="nav-link">Users</a>
+            </li>
+            <li class="nav-item">
+                <a href="/group/list" class="nav-link">Groups</a>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,10 @@
+{% extends '/base.html.twig' %}
+
+{% block title  %} new User {% endblock %}
+
+{% block body %}
+    <a href="/user/list" class="btn btn-dark">back</a>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{form_end(form)}}
+{% endblock %}

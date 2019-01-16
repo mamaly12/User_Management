@@ -1,0 +1,46 @@
+{% extends '/base.html.twig' %}
+
+{% block title  %} Group Users {% endblock %}
+
+{% block body %}
+    <a href="/group/list" class="btn btn-dark">back</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="/group/{{ groupId }}/user/add" class="btn btn-dark">add user</a>
+    {% endif %}
+  {% if groupUsers %}
+    <table class="table table-striped" id="groupUsers">
+        <thead>
+        <tr>
+            <th>Title</th>
+            {% if is_granted('ROLE_ADMIN') %}
+            <th>Actions</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for groupUser in groupUsers %}
+            <tr>
+                <td>
+                    {{ groupUser.name}}
+                </td>
+                {% if is_granted('ROLE_ADMIN') %}
+                <td>
+                    {% if toAdd is defined %}
+                        <a href="#" class="btn btn-dark add-groupUsers" data-userId="{{ groupUser.userId }}" data-groupId="{{ groupId }}">Add To Group</a>
+                    {% else %}
+                        <a href="#" class="btn btn-danger delete-groupUsers" data-userId="{{ groupUser.userId }}" data-groupId="{{ groupUser.groupId }}">Delete From Group</a>
+                    {% endif %}
+                </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  {% else %}
+    <p> No user exists</p>
+  {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('static/Group/Group.js')}}"></script>
+{% endblock %}

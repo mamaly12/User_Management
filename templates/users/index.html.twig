@@ -1,0 +1,44 @@
+{% extends '/base.html.twig' %}
+
+{% block title  %} Users {% endblock %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="/register" class="btn btn-dark">add</a>
+    {% endif %}
+  {% if users %}
+    <table class="table table-striped" id="users">
+        <thead>
+        <tr>
+            <th>Name</th>
+            {% if is_granted('ROLE_ADMIN') %}
+            <th>Actions</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>
+                    {{ user.name }}
+                    {% if app.user!=null and app.user.id==user.id %}
+                        - (this is user token: {{ user.token }} - you have to send token for each REST request)
+                    {% endif %}
+                </td>
+                {% if is_granted('ROLE_ADMIN') and adminData.id is defined and  adminData.id!=user.id %}
+                <td>
+                    <a href="#" class="btn btn-danger delete-user" data-id="{{ user.id }}">Delete</a>
+                </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  {% else %}
+    <p> No user exists</p>
+  {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('static/user/user.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends '/base.html.twig' %}
+
+{% block title  %} Groups {% endblock %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="/group/new" class="btn btn-dark">add group</a>
+    {% endif %}
+  {% if groups %}
+    <table class="table table-striped" id="groups">
+        <thead>
+        <tr>
+            <th>Group title</th>
+            <th>#Members</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for group in groups %}
+            <tr>
+                <td>
+                    {{ group.title }}
+                </td>
+                <td>
+                    {{ group.userCount }}
+                </td>
+                <td>
+                    <a href="/group/{{ group.id }}/users" class="btn btn-dark">View Members</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="/group/{{ group.id }}/user/add" class="btn btn-dark">Add Member</a>
+                        {%if  group.userCount==0 %}
+                            <a href="#" class="btn btn-danger delete-group" data-id="{{ group.id }}">Delete Group</a>
+                        {% endif %}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  {% else %}
+    <p> No group exists</p>
+  {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('static/Group/Group.js')}}"></script>
+{% endblock %}
