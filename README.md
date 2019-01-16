@@ -88,7 +88,7 @@ User Guides
             
             // TODO  After each Login Token must be created
         
-        b.  REST REQUESTS MUST START WITH /api/. Such as the followign sample url:
+        b.  URLs of the REST REQUESTS MUST START WITH /api/. Such as the followign sample url:
         
             `HOMEURL/api/RESTREQUEST`
             
