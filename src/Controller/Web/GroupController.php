@@ -104,7 +104,8 @@ class GroupController extends AbstractController
      */
     public function viewGroupUsers($id){
 
-        $groupUsers = $this->groupUserService->findUsersByGroupId($id);
+        $result = $this->groupUserService->findUsersByGroupId($id);
+        $groupUsers=$result['users'];
         return $this->render('groups/users.html.twig',array('groupUsers'=>$groupUsers,'groupId'=>$id));
     }
 
