@@ -39,7 +39,7 @@ INSTALLATION
 		
 		create a user with password which has access to the database: DATABASE_URL=mysql://user_db:user_password@127.0.0.1:3306/dbName
 		
-		b. php bin/console doctrin:database:create
+		c. php bin/console doctrin:database:create
 
 3- Create Table:
     -in the terminal of the IDE type these commands to create tables for the entities of the project:
